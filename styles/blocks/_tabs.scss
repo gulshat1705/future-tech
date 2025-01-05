@@ -1,4 +1,4 @@
-@use '../helpers/' as *;
+@use '../helpers' as *;
 
 .tabs {
   &__header {
@@ -8,11 +8,12 @@
       overflow-x: auto;
     }
   }
+
   &__buttons {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     column-gap: rem(20);
-    padding: fluid(50, 20);
+    padding-block: fluid(50, 20);
 
     @include laptop {
       column-gap: rem(14);
@@ -21,7 +22,28 @@
     @include tablet {
       width: max-content;
     }
+
+    &--compact {
+      display: inline-flex;
+      column-gap: rem(10);
+      padding: rem(10);
+      background-color: var(--color-dark);
+      border-radius: rem(10);
+
+      .tabs__button {
+        padding-block: rem(18);
+
+        &.is-active {
+          background-color: var(--color-dark-15);
+        }
+
+        @include laptop {
+          padding-block: rem(14);
+        }
+      }
+    }
   }
+
   &__button {
     padding: fluid(30, 18) rem(11);
     color: var(--color-gray-60);
