@@ -28,6 +28,7 @@ $mobile-s: 480.98;
     @content;
   }
 }
+
 @mixin mobile-above {
   @media (width > rem($mobile)) {
     @content;
@@ -39,6 +40,7 @@ $mobile-s: 480.98;
     @content;
   }
 }
+
 @mixin mobile-s-above {
   @media (width > rem($mobile-s)) {
     @content;

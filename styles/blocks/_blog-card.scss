@@ -1,4 +1,4 @@
-@use '../helpers/' as *;
+@use '../helpers' as *;
 
 .blog-card {
   display: grid;
@@ -8,7 +8,9 @@
 
   @include tablet {
     grid-template-columns: 1fr auto;
-    grid-template-areas: 'author link' 'body body';
+    grid-template-areas:
+      'author link'
+      'body body';
     row-gap: rem(30);
   }
 
@@ -35,6 +37,7 @@
     display: grid;
     row-gap: fluid(10, 4);
   }
+
   &__link {
     align-self: center;
 
